@@ -103,8 +103,23 @@
   }
 
   .custom-table-container-row {
-    border: 1px solid #000;
-    border-radius: 10px;
-    margin: 10px 0px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin: 3px 0px;
+    padding: 10px;
+  }
+
+  .custom-table {
+    padding: 0px;
+  }
+
+  .custom-left{
+    border-left: 1px solid #000;
+    border-radius: 10px 0 0 10px;
+    }
+
+  .custom-right{
+    border-right: 1px solid #000;
+    border-radius: 0 10px 10px 0;
   }
 }

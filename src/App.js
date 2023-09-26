@@ -1,11 +1,11 @@
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Import Bootstrap JavaScript
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import { FaFilter, FaSearch } from "react-icons/fa";
 import React, { useState } from "react";
 
+import { FaFilter } from "react-icons/fa";
 import { value } from "./projects_data";
 
 function Project() {
@@ -141,31 +141,44 @@ function Project() {
               <table className="table table-borderless">
                 <thead>
                   <tr>
-                    <th>Project</th>
-                    <th>Configuration</th>
-                    <th>Source System</th>
-                    <th>Target System</th>
-                    <th>Created Date</th>
-                    <th>Last Update Date</th>
-                    <th>Size</th>
+                    <th>PROJECT</th>
+                    <th>SOURCE SYSTEM</th>
+                    <th>TARGET SYSTEM</th>
+                    <th>LAST UPDATE</th>
+                    <th>SIZE</th>
                   </tr>
                 </thead>
                 <tbody>
                   {data.map((item, index) => (
-                    <tr key={index} className="custom-table-container-row">
-                      <td>
-                        {" "}
+                    <tr key={index}>
+                      <td className="custom-table">
+                        <div className="custom-table-container-row custom-left">
                         <span className="active">
                           {item?.active ? "🟢" : "🔴"}
                         </span>
                         {item.projectname}
+                        </div>
                       </td>
-                      <td>{item.Configration}</td>
-                      <td>{item.sourcesystem}</td>
-                      <td>{item.targetsystem}</td>
-                      <td>{item.createddate}</td>
-                      <td>{item.LastUpdateDate}</td>
-                      <td>{item.Size}</td>
+                      <td className="custom-table">
+                        <div className="custom-table-container-row">
+                        {item.sourcesystem}
+                        </div>
+                      </td>
+                      <td className="custom-table">
+                        <div className="custom-table-container-row">
+                        {item.targetsystem}
+                        </div>
+                      </td>
+                      <td className="custom-table">
+                        <div className="custom-table-container-row">
+                        {item.LastUpdateDate}
+                        </div>
+                      </td>
+                      <td className="custom-table">
+                        <div className="custom-table-container-row  custom-right">
+                        {item.Size}
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
