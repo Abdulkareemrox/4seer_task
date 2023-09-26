@@ -77,11 +77,23 @@
     border-radius: 10px;
   }
 
+  .input-container{
+    position: relative;
+  }
+
   .input-container input {
     width: 500px;
     border: none;
     border-radius: 10px;
     height: 33px;
+    padding-left: 30px;
+  }
+
+  .icon {
+    position: absolute;
+    top: 44%;
+    left: 6px;
+    transform: translateY(-50%);
   }
 
   .filter-button {

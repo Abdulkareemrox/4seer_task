@@ -3,9 +3,9 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+import { CiFilter, CiSearch } from "react-icons/ci";
 import React, { useState } from "react";
 
-import { FaFilter } from "react-icons/fa";
 import { value } from "./projects_data";
 
 function Project() {
@@ -128,12 +128,16 @@ function Project() {
               <div className="input-container">
                 <input
                   type="text"
-                  placeholder="&#128269; Search by project name, amount..."
+                  placeholder="Search by project name, amount..."
                 />
+                <div className="icon">
+                  <CiSearch />
+                </div>
               </div>
+
               <div>
                 <button className="filter-button">
-                  <FaFilter className="unfilled-icon" /> Filter
+                  <CiFilter className="unfilled-icon" /> Filter
                 </button>
               </div>
             </div>
@@ -153,30 +157,30 @@ function Project() {
                     <tr key={index}>
                       <td className="custom-table">
                         <div className="custom-table-container-row custom-left">
-                        <span className="active">
-                          {item?.active ? "🟢" : "🔴"}
-                        </span>
-                        {item.projectname}
+                          <span className="active">
+                            {item?.active ? "🟢" : "🔴"}
+                          </span>
+                          {item.projectname}
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row">
-                        {item.sourcesystem}
+                          {item.sourcesystem}
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row">
-                        {item.targetsystem}
+                          {item.targetsystem}
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row">
-                        {item.LastUpdateDate}
+                          {item.LastUpdateDate}
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row  custom-right">
-                        {item.Size}
+                          {item.Size}
                         </div>
                       </td>
                     </tr>
