@@ -1,16 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import '../style/Project.css';
-import { value } from "./projects_data";
 import "./App.css";
-import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
+
+import { BsFillPencilFill, BsFillTrashFill } from "react-icons/bs";
+import { FaFilter, FaSearch } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+
+import { FaQuestionCircle } from "react-icons/fa";
+import { ToastContainer } from "react-toastify";
+import { value } from "./projects_data";
+
+// import '../style/Project.css';
+
+
+
 // import AddProjectDialog from './AddProjectDialog';
 // import NavBar from './NavBar';
-import { Link, useNavigate } from "react-router-dom";
+
 // import EditProjectDialog from './EditProjectDialog';
-import { FaQuestionCircle } from "react-icons/fa";
-import { FaSearch, FaFilter } from "react-icons/fa";
+
+
 
 function Project() {
   const [data, setData] = useState(value);

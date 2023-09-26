@@ -51,8 +51,9 @@
   .custom-radio .form-check-input:checked {
     border: 2px solid #3F787E;
     position: relative;
+    background-color: transparent;
   }
-  
+
   .custom-radio .form-check-input:checked::before {
     content: "";
     position: absolute;
@@ -61,10 +62,49 @@
     transform: translate(-50%, -50%);
     width: 8px;
     height: 8px;
-    background-color: #3F787E; /* Circle color */
-    border-radius: 50%; /* Create a circle */
+    background-color: #3F787E;
+    border-radius: 50%;
   }
-  
-  
-  
+
+
+  .sort-container {
+    margin-right: 2.5rem;
+  }
+
+  .search-container {
+    background-color: #3F787E;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .input-container input {
+    width: 500px;
+    border: none;
+    border-radius: 10px;
+    height: 33px;
+  }
+
+  .filter-button {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+
+  .unfilled-icon {
+    color: #000;
+    margin-right: 5px;
+  }
+
+  .active {
+    margin-right: 10px;
+  }
+
+  .custom-table-container-row {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 10px 0px;
+  }
 }
