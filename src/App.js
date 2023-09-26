@@ -6,10 +6,20 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { CiFilter, CiSearch } from "react-icons/ci";
 import React, { useState } from "react";
 
+import { BsFillPencilFill } from "react-icons/bs";
 import { value } from "./projects_data";
 
 function Project() {
   const [data, setData] = useState(value);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
 
   return (
     <div className="active-project-container">
@@ -154,33 +164,66 @@ function Project() {
                 </thead>
                 <tbody>
                   {data.map((item, index) => (
-                    <tr key={index}>
+                    <tr
+                      key={index}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave}
+                    >
                       <td className="custom-table">
                         <div className="custom-table-container-row custom-left">
                           <span className="active">
                             {item?.active ? "🟢" : "🔴"}
                           </span>
                           {item.projectname}
+                          <div
+                            className={`custom-overlay custom-left ${
+                              hoveredIndex === index ? "show" : "not-show"
+                            }`}
+                          ></div>
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row">
                           {item.sourcesystem}
+                          <div
+                            className={`custom-overlay ${
+                              hoveredIndex === index ? "show" : "not-show"
+                            }`}
+                          ></div>
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row">
                           {item.targetsystem}
+                          <div
+                            className={`custom-overlay ${
+                              hoveredIndex === index ? "show" : "not-show"
+                            }`}
+                          ></div>
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row">
                           {item.LastUpdateDate}
+                          <div
+                            className={`custom-overlay ${
+                              hoveredIndex === index
+                                ? "show edit-container"
+                                : "not-show"
+                            }`}
+                          >
+                            Edit <BsFillPencilFill className="pencil-icon" />
+                          </div>
                         </div>
                       </td>
                       <td className="custom-table">
                         <div className="custom-table-container-row  custom-right">
                           {item.Size}
+                          <div
+                            className={`custom-overlay custom-right ${
+                              hoveredIndex === index ? "show" : "not-show"
+                            }`}
+                          ></div>
                         </div>
                       </td>
                     </tr>
