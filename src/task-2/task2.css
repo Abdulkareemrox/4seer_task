@@ -1,0 +1,54 @@
+.performance-project-container{
+    .sub-title{
+        color: grey;
+        font-size: 12px;
+    }
+
+    .custom-table-container-row {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        margin: 3px 0px;
+        padding: 10px;
+        position: relative;
+      }
+    
+      .custom-table {
+        padding: 0px;
+      }
+    
+      .custom-left {
+        border-left: 1px solid #000;
+        border-radius: 10px 0 0 10px;
+      }
+    
+      .custom-right {
+        border-right: 1px solid #000;
+        border-radius: 0 10px 10px 0;
+      }
+
+      .table-head{
+        background-color: #3F787E;
+        border: transparent;
+      }
+
+      .table-outer-container{
+        border: 10px solid lightgreen;
+        border-radius: 10px;
+        padding: 18px;
+      }
+
+      .progress-bar-container {
+        width: 95%;
+        height: 8px;
+        background-color: #ccc;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+      
+      .progress-bar {
+        height: 100%;
+        border-radius: 5px;
+        transition: width 0.3s;
+      }
+      
+}
