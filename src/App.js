@@ -8,7 +8,6 @@ import Task3 from "./task-3/index.js";
 function App() {
   return (
     <div>
-      <p>Navigate to task</p>
       <Router>
         <Routes>
           <Route path="/task3" element={<Task3 />} />
