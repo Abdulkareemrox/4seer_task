@@ -1,7 +1,6 @@
-.App {
+.stepper-container {
     text-align: center;
     margin-top: 20px;
-  }
   
   .popup {
     display: none;
@@ -9,13 +8,39 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 300px;
+    width: 700px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
+
+  .popup-header{
+    display: flex;
+  }
   
+  .close-button{
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    color: lightgreen;
+  }
+
+  .headline-stepper{
+    color: #fff;
+  }
+
+  .popup-main-container{
+    background-color: #45a049;
+    padding: 10px;
+  }
+
+  .popup-boarder{
+    border: 6px solid lightgreen;
+    border-radius: 10px;
+    padding: 12px;
+  }
+
   .popup.open {
     display: block;
   }
@@ -44,12 +69,6 @@
     background-color: #fff;
   }
   
-  .step-buttons button.active {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-  }
-  
   .stepper-fields input {
     width: 100%;
     margin-bottom: 10px;
@@ -63,18 +82,16 @@
   
   .buttons button {
     padding: 10px 20px;
-  }
+    border: transparent;
+    color: blue;
+    border-radius: 10px;
+    background: #fff;  }
   
   .buttons button:last-child {
-    background-color: #4caf50;
+    background-color: lightgreen;
     color: white;
     cursor: pointer;
   }
-  
-  .buttons button:last-child:hover {
-    background-color: #45a049;
-  }
-  /* ... (previous CSS styles) */
 
 .stepper {
     text-align: center;
@@ -85,7 +102,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%; /* Adjust this width as needed */
+    width: 100%; /* Adjust this width as needed */
     margin: 0 auto;
     position: relative;
   }
@@ -102,12 +119,13 @@
   }
   
   .stepper-dot {
-    width: 30px; /* Increase circle size */
-    height: 30px; /* Increase circle size */
+    width: 50px; /* Increase circle size */
+    height: 50px; /* Increase circle size */
     border: 2px solid #ccc;
-    background-color: white;
+    background-color: lightgray;
     border-radius: 50%;
     position: relative;
+    color: #fff;
     z-index: 1;
     cursor: pointer; /* Add cursor pointer */
     display: flex;
@@ -115,11 +133,6 @@
     align-items: center;
   }
   
-  .stepper-dot.active {
-    background-color: #4caf50;
-    border-color: #4caf50;
-    color: white;
-  }
   
   .step-buttons {
     display: flex;
@@ -136,16 +149,6 @@
     background-color: #fff;
   }
   
-  .step-buttons button.active {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-  }
-  
-  /* ... (other styles) */
-  /* ... (previous CSS styles) */
-
-/* Adjust the styles for the project name input */
 .stepper-fields input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -153,20 +156,36 @@
     border-radius: 4px;
     outline: none;
     font-size: 16px;
+    margin-bottom: 0px;
   }
   
-  /* ... (other styles) */
-  /* ... (previous CSS styles) */
-
-/* Style for stepper text */
 .stepper-text {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 8px; /* Adjust the gap as needed */
+    gap: 52px;
+    margin: 10px 0px;
   }
-  
-  /* ... (other styles) */
-  
-  
+
+  .stepper-text > div{
+    font-size: 10px;
+    color: #fff;
+  }
+
+  .active {
+    background-color: #fff;
+    border: 6px solid lightgreen;
+    color: #000;
+  }
+
+  .stepper-one-container{
+    border: 2px solid #fff;
+    border-radius: 6px;
+    padding: 10px;
+  }
+    .server-container{
+      height: 300px;
+      overflow: auto;
+    }
+}

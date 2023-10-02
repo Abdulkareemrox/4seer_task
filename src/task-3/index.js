@@ -1,16 +1,16 @@
-import './App.css'; // Import the CSS file.
+import "./stepper.css";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { BsSearch } from 'react-icons/bs'; // Import the Bootstrap search icon
-import { BsX } from 'react-icons/bs'; // Import the Bootstrap close (X) icon
+import { BsSearch } from "react-icons/bs";
+import { BsX } from "react-icons/bs";
 
 const App = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [step, setStep] = useState(1);
-  const [fields, setFields] = useState(['', '', '', '', '', '']);
-  const [projectName, setProjectName] = useState('');
-  const [sourceName, setSourceName] = useState('');
+  const [fields, setFields] = useState(["", "", "", "", "", ""]);
+  const [projectName, setProjectName] = useState("");
+  const [sourceName, setSourceName] = useState("");
 
   const openPopup = () => {
     setPopupOpen(true);
@@ -41,74 +41,138 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="stepper-container">
       <button onClick={openPopup}>Open Popup</button>
-      <div className={`popup ${isPopupOpen ? 'open' : ''}`}>
-        <div className="popup-header">
-          <button className="close-button" onClick={closePopup}>
-            <BsX />
-          </button>
-        </div>
-        <div className="popup-content">
-          <div className="stepper">
-            <div className="stepper-line">
-              {Array.from({ length: 6 }, (_, index) => (
-                <div
-                  key={index}
-                  className={`stepper-dot ${index < step ? 'active' : ''}`}
-                  onClick={() => handleStepClick(index + 1)}
-                >
-                  {index + 1}
+      <div className={`popup ${isPopupOpen ? "open" : ""}`}>
+        <div className="popup-main-container">
+          <div className="popup-boarder">
+            <div className="popup-header">
+              <button className="close-button" onClick={closePopup}>
+                <BsX />
+              </button>
+            </div>
+            <h4 className="headline-stepper">NEW PROJECT</h4>
+            <div className="popup-content">
+              <div className="stepper">
+                <div className="stepper-line">
+                  {Array.from({ length: 6 }, (_, index) => (
+                    <div
+                      key={index}
+                      className={`stepper-dot ${index < step ? "active" : ""}`}
+                      onClick={() => handleStepClick(index + 1)}
+                    >
+                      {index + 1}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <div className="stepper-text d-flex ">
-              <div>Project Name1</div>
-              <div>Project Name2</div>
-              <div>Project Name3</div>
-              <div>Project Name4</div>
-              <div>Project Name5</div>
-              <div>Project Name6</div>
-            </div>
-            <div className="stepper-fields">
-              {step === 1 && (
-                <input
-                  type="text"
-                  placeholder="Project Name"
-                  value={projectName}
-                  onChange={(e) => setProjectName(e.target.value)}
-                />
-              )}
-              {step === 2 && (
-                <div className="search-input">
-                  <BsSearch className="search-icon" />
-                  <input
-                    type="text"
-                    placeholder="Search by Name"
-                    value={sourceName}
-                    onChange={(e) => setSourceName(e.target.value)}
-                  />
+                <div className="stepper-text d-flex ">
+                  <div>Project Name</div>
+                  <div>Selected source</div>
+                  <div>Server inputs</div>
+                  <div>Target source</div>
+                  <div>Target inputs</div>
+                  <div>Mapping</div>
                 </div>
-              )}
-              {step > 2 && step <= 6 && (
-                <input
-                  type="text"
-                  placeholder={`Field ${step - 1}`}
-                  value={fields[step - 2]}
-                  onChange={(e) => handleFieldChange(step - 2, e.target.value)}
-                />
-              )}
+                <div className="stepper-fields">
+                  {step === 1 && (
+                    <div className="mt-4">
+                      <h5 className="d-flex" style={{ color: "#fff" }}>
+                        Project Name
+                      </h5>
+                      <div className="stepper-one-container">
+                        <input
+                          type="text"
+                          placeholder="Project Name"
+                          value={projectName}
+                          onChange={(e) => setProjectName(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                  )}
+                  {step === 2 && (
+                    <div className="mt-4">
+                      <h5 className="d-flex" style={{ color: "#fff" }}>
+                        Select Source
+                      </h5>
+                      <div className="stepper-one-container">
+                        <input
+                          type="text"
+                          placeholder="Project Name"
+                          value={projectName}
+                          onChange={(e) => setProjectName(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                  )}
+                  {step === 3 && (
+                    <div className="server-container">
+                    <div className="mt-4">
+                      <h5 className="d-flex" style={{ color: "#fff" }}>
+                        Server Name
+                      </h5>
+                      <div className="stepper-one-container">
+                        <input
+                          type="text"
+                          placeholder="Project Name"
+                          value={projectName}
+                          onChange={(e) => setProjectName(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-4">
+                      <h5 className="d-flex" style={{ color: "#fff" }}>
+                        Database
+                      </h5>
+                      <div className="stepper-one-container">
+                        <input
+                          type="text"
+                          placeholder="Project Name"
+                          value={projectName}
+                          onChange={(e) => setProjectName(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-4">
+                      <h5 className="d-flex" style={{ color: "#fff" }}>
+                        Username
+                      </h5>
+                      <div className="stepper-one-container">
+                        <input
+                          type="text"
+                          placeholder="Project Name"
+                          value={projectName}
+                          onChange={(e) => setProjectName(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-4">
+                      <h5 className="d-flex" style={{ color: "#fff" }}>
+                        Password
+                      </h5>
+                      <div className="stepper-one-container">
+                        <input
+                          type="text"
+                          placeholder="Project Name"
+                          value={projectName}
+                          onChange={(e) => setProjectName(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="buttons">
+                {step !== 6 ? (
+                  <>
+                    <button onClick={handleSaveDraft}>Save as Draft</button>
+                    <button onClick={handleNext}>Save</button>
+                  </>
+                ) : (
+                  <button onClick={closePopup}>Close</button>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="buttons">
-            {step !== 6 ? (
-              <>
-                <button onClick={handleSaveDraft}>Save as Draft</button>
-                <button onClick={handleNext}>Next</button>
-              </>
-            ) : (
-              <button onClick={closePopup}>Close</button>
-            )}
           </div>
         </div>
       </div>
@@ -117,3 +181,22 @@ const App = () => {
 };
 
 export default App;
+
+                    {/* <div className="search-input">
+                      <BsSearch className="search-icon" />
+                      <input
+                        type="text"
+                        placeholder="Search by Name"
+                        value={sourceName}
+                        onChange={(e) => setSourceName(e.target.value)}
+                      />
+                    </div> */}
+
+                                        {/* <input
+                      type="text"
+                      placeholder={`Field ${step - 1}`}
+                      value={fields[step - 2]}
+                      onChange={(e) =>
+                        handleFieldChange(step - 2, e.target.value)
+                      }
+                    /> */}
