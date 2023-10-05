@@ -181,22 +181,3 @@ const App = () => {
 };
 
 export default App;
-
-                    {/* <div className="search-input">
-                      <BsSearch className="search-icon" />
-                      <input
-                        type="text"
-                        placeholder="Search by Name"
-                        value={sourceName}
-                        onChange={(e) => setSourceName(e.target.value)}
-                      />
-                    </div> */}
-
-                                        {/* <input
-                      type="text"
-                      placeholder={`Field ${step - 1}`}
-                      value={fields[step - 2]}
-                      onChange={(e) =>
-                        handleFieldChange(step - 2, e.target.value)
-                      }
-                    /> */}

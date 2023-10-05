@@ -1,0 +1,57 @@
+.main-input-container {
+    border: 2px solid #3F787E;
+    border-radius: 6px;
+    padding: 10px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+
+    .time-input-container {
+
+        display: flex;
+    }
+
+    .time-input-container input {
+        width: 80px;
+        font-size: 30px;
+        background-color: #3F787E;
+        color: white !important;
+        border: transparent;
+        border-radius: 6px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .divider-input {
+        color: #547766;
+        font-size: 50px;
+    }
+
+    .period-button {
+        border: 2px solid #6D743B;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        padding: 10px;
+    }
+
+    .period-button-two {
+        border: 2px solid #6D743B;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        padding: 10px;
+    }
+
+    .active-timer {
+        background-color: #6D743B;
+        color: #fff;
+    }
+
+    .cancel-btn {
+        color: #B63933;
+        margin-right: 10px;
+    }
+
+    .ok-btn {
+        color: #29801B;
+    }
+}

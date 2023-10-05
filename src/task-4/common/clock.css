@@ -1,0 +1,17 @@
+.analog-timer-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .analog-clock {
+    /* Style your analog clock here */
+  }
+  
+  .time-input {
+    margin-left: 20px;
+    text-align: center;
+  }
+  
+  /* Add any additional styling as needed */
+  

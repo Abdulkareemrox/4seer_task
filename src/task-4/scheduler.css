@@ -1,0 +1,69 @@
+.active-project-container {
+
+    .breadcrumb-item+.breadcrumb-item::before {
+        content: ">";
+        margin: 0 0.5rem;
+    }
+
+    .blue-link {
+        color: blue !important;
+        text-decoration: none !important;
+    }
+
+    .active-link {
+        color: black !important;
+        text-decoration: underline !important;
+        text-decoration-thickness: 0.1em;
+        text-underline-offset: 0.3em;
+    }
+
+    .add-project-btn {
+        background-color: #3F787E;
+        border: 1px solid #3F787E;
+    }
+
+    .add-project-btn span {
+        font-size: 20px;
+        margin-right: 8px;
+    }
+
+    .sub-title {
+        color: #6D743B;
+        font-size: 14px;
+    }
+
+    .headline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3F787E;
+    }
+
+    .line {
+        flex-grow: 1;
+        height: 1px;
+        background-color: #3F787E;
+        margin: 0 10px;
+    }
+
+    .line-one {
+        flex-grow: 0.1;
+        height: 1px;
+        background-color: #3F787E;
+        margin: 0 10px;
+    }
+
+    span {
+        flex-grow: 0;
+    }
+
+    .line {
+        border-bottom: 4px double #3f787e;
+    }
+
+    .form-select option {
+        background-color: #3F787E;
+        color: white;
+    }
+
+}
