@@ -7,7 +7,7 @@ import DatePicker from "react-datepicker";
 import { Icons } from "./icons.jsx";
 import { format } from "date-fns";
 
-const DatePickerComponent = ({ selectedDate, onChange, header }) => {
+const DatePickerComponent = ({ selectedDate, onChange, header, onyDate }) => {
   const [startDate, setStartDate] = useState(
     selectedDate instanceof Date && !isNaN(selectedDate)
       ? selectedDate
@@ -25,10 +25,10 @@ const DatePickerComponent = ({ selectedDate, onChange, header }) => {
 
   return (
     <div className="date-picker">
-      <div className="head" style={{ marginBottom: 10 }}>
+    {onyDate && <div className="head" style={{ marginBottom: 10 }}>
         Select date
-      </div>
-      <div
+      </div>}
+     {onyDate && <div
         className="head"
         style={{
           display: "flex",
@@ -37,8 +37,8 @@ const DatePickerComponent = ({ selectedDate, onChange, header }) => {
       >
         <div>{header}</div>
         <div>{Icons?.calendar}</div>
-      </div>
-      <div style={{ borderBottom: "1px solid gray", margin: "10px 0px" }}></div>
+      </div>}
+      {onyDate && <div style={{ borderBottom: "1px solid gray", margin: "10px 0px" }}></div>}
       <div
         style={{
           border: "1px solid #fff",

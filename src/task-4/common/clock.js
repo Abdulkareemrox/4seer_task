@@ -3,7 +3,7 @@ import "./clock.css"
 import { timePicker } from "analogue-time-picker";
 import { useEffect } from "react";
 
-const clock=()=> {
+const Clock=()=> {
   useEffect(() => {
       timePicker({
         element: document.getElementById("onPage"),
@@ -19,4 +19,4 @@ const clock=()=> {
   );
 }
 
-export default clock;
+export default Clock;

@@ -47,9 +47,6 @@ function Project() {
             <h4 className="fw-bold mb-0">SCHEDULE</h4>
             <span className="sub-title">Schedule and Manage your projects</span>
           </div>
-          <button className="text-white rounded add-project-btn px-4">
-            <span>+</span> ADD PROJECT
-          </button>
         </div>
         <div className="headline">
           <div className="line-one"></div>
@@ -95,9 +92,24 @@ function Project() {
                 <option value="option3">Option 3</option>
               </select>
             </div>
-            <div className="col-1">Time</div>
-            <div className="col-5 mb-4">
-              <TimeInput />
+            <div className="col-6">
+              <div className="container">
+                <div className="row">
+                  <div className="col-2">Time</div>
+                  <div className="col-10" style={{ marginBottom: 40 }}>
+                    <TimeInput />
+                  </div>
+                  <div className="col-2">Date</div>
+                  <div className="col-10">
+                    <DatePickerComponent
+                      selectedDate={selectedDate}
+                      onChange={handleDateChange}
+                      header={"Start date"}
+                      onyDate={false}
+                    />{" "}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -166,16 +178,43 @@ function Project() {
           <span>Summary</span>
           <div className="line"></div>
         </div>
-        <div className="container" style={{marginBottom: 30}}>
+        <div className="container" style={{ marginBottom: 30 }}>
           <div className="row">
             <div className="col-2">Description</div>
             <div className="col-10">
-            <textarea className="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Enter your text here..."></textarea>            </div>
+              <textarea
+                className="form-control"
+                id="exampleFormControlTextarea1"
+                rows="4"
+                placeholder="Enter your text here..."
+              ></textarea>{" "}
+            </div>
           </div>
         </div>
         <div className="d-flex justify-content-end">
-          <button style={{background: "#B63933", color: "#fff", border: "transparent", borderRadius: 6, padding: "10px 12px"}}>Cancel</button>
-          <button style={{background: "#29801B", color: "#fff", border: "transparent", borderRadius: 6, marginLeft: 10, padding: "10px 12px"}}>Save</button>
+          <button
+            style={{
+              background: "#B63933",
+              color: "#fff",
+              border: "transparent",
+              borderRadius: 6,
+              padding: "10px 12px",
+            }}
+          >
+            Cancel
+          </button>
+          <button
+            style={{
+              background: "#29801B",
+              color: "#fff",
+              border: "transparent",
+              borderRadius: 6,
+              marginLeft: 10,
+              padding: "10px 12px",
+            }}
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>
